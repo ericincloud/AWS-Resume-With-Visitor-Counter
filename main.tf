@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "example" {
+resource "aws_s3_bucket" "testbucket" {
   bucket = "s3buckettesting12234234"
   acl    = "private"  # Access control list, adjust as needed
 
