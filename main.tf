@@ -8,6 +8,7 @@ terraform {
   backend "s3" {
     bucket = "tftestbucket12345" # change to name of your bucket
     region = "us-west-1"                   # change to your region
+    key    = "terraform.tfstate"
   }
 }
 
