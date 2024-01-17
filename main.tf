@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "test23423" {
-  bucket = "tftestbucket12345"
+  bucket = "newtestbucket3244234"
   acl    = "private"  # Access control list, adjust as needed
 
   tags = {
