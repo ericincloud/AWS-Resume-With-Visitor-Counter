@@ -51,7 +51,7 @@ resource "aws_lambda_function" "retrieve_visitor_count" {
 }
 
 # CloudFront Distribution
-resource "aws_cloudfront_distribution" "ericincloud.com" {
+resource "aws_cloudfront_distribution" "ericincloud" {
   origin {
     domain_name = ericincloud.com
     origin_id   = aws_s3_bucket.static_site.id
