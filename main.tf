@@ -2,26 +2,23 @@ provider "aws" {
   region = "us-west-1"  # Change to your desired AWS region
 }
 
-resource "aws_s3_bucket" "StaticSiteEricInCloud" {
+provider "aws" {
+  region = "us-west-1"
+}
+
+resource "aws_s3_bucket" "StaticSite" {
   bucket = "ericincloud.com"
-  acl    = "private"
- 
-  website {
-    index_document = "index.html"
+  acl    = "public-read"  # Access control list, adjust as needed
+
+  versioning {
+    enabled = fasle
   }
 
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject"
-    }
-  ]
-}
-EOF
+  lifecycle {
+    prevent_destroy = false  # Set to true to prevent accidental deletion
+  }
+
+  # Add other configurations as needed
 }
 
 
