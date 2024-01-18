@@ -2,7 +2,6 @@ provider "aws" {
   region = "us-west-1"  # Change to your desired AWS region
 }
 
-# S3 Bucket for Static Site
 resource "aws_s3_bucket" "static_site" {
   bucket = "ericincloud.com"
   acl    = "public-read"
@@ -10,7 +9,22 @@ resource "aws_s3_bucket" "static_site" {
   website {
     index_document = "index.html"
   }
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "${aws_s3_bucket.static_site.arn}/*"
+    }
+  ]
 }
+EOF
+}
+
 
 # DynamoDB Table
 resource "aws_dynamodb_table" "visitor_table" {
