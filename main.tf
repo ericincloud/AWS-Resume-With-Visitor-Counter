@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "StaticSite" {
   acl    = "public-read"  # Access control list, adjust as needed
 
   versioning {
-    enabled = fasle
+    enabled = false
   }
 
   lifecycle {
