@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_s3_bucket" "StaticSite234543" {
   bucket = "ericincloud.com"
   acl    = "public-read"
-
+ 
   website {
     index_document = "index.html"
   }
