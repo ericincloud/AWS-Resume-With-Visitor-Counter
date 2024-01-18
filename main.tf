@@ -17,8 +17,7 @@ resource "aws_s3_bucket" "static_site" {
     {
       "Effect": "Allow",
       "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "${aws_s3_bucket.static_site.arn}/*"
+      "Action": "s3:GetObject"
     }
   ]
 }
