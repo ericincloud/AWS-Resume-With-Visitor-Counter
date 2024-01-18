@@ -50,49 +50,26 @@ resource "aws_lambda_function" "retrieve_visitor_count" {
   source_code_hash = filebase64("RetrieveVisitorCountLambda.zip")
 }
 
-# CloudFront Distribution
-resource "aws_cloudfront_distribution" "ericincloud" {
-  origin {
-    domain_name = ericincloud.com
-    origin_id   = aws_s3_bucket.static_site.id
-  }
-
-  enabled             = true
-  default_root_object = "index.html"
-
-  default_cache_behavior {
-    target_origin_id = aws_s3_bucket.static_site.id
-    forwarded_values {
-      query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
-    viewer_protocol_policy = "allow-all"
-  }
-
-  # Add more settings as needed
-}
-
 # IAM Role for Lambda Execution
 resource "aws_iam_role" "lambda_exec" {
   name = "lambda_exec_role"
 
   assume_role_policy = <<EOF
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Principal": {
-          "Service": "lambda.amazonaws.com"
-        },
-        "Action": "sts:AssumeRole"
-      }
-    ]
-  }
-  EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "lambda.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
 }
+EOF
+}
+
 
 resource "aws_iam_role_policy_attachment" "lambda_exec_attachment" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
