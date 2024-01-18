@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_s3_bucket" "StaticSite" {
   bucket = "ericincloud.com"
   acl    = "private"  # Access control list, adjust as needed
-
+ 
   versioning {
     enabled = false
   }
