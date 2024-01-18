@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Eric Lai's Resume, Powered by AWS! | Eric In Cloud</title>
+
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="My website powered by AWS services!"/>
+<meta charset="UTF-8"> 
+
+<link type="text/css" rel="stylesheet" href="style.css">
+<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body id="top">
+<div id="cv" class="instaFade">
+	<div class="mainDetails">
+		<div id="headshot" class="quickFade">
+			<img src="avatarmaker.png" alt="Eric" />
+		</div>
+		
+		<div id="name">
+			<h1 class="quickFade delayTwo">Eric Lai</h1>
+			<h2 class="quickFade delayThree">Cloud Engineer</h2>
+		</div>
+
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+				<li><!-- Example: Display area for the count -->
+				<div><u>Visitor Count</u>: <span id="countDisplay"></span></div></li>
+				<li>e: <a href="mailto:ericlai135@gmail.com" target="_blank">ericlai135@gmail.com</a></li>
+				<li>w: <a href="www.ericincloud.com">www.EricInCloud.com</a></li> 
+				<li>m: (917)-765-2520</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="mainArea" class="quickFade delayFive">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Personal Profile</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<h2><b>Welcome to my website powered by AWS!</b></h2><br>
+					<p>My name is Eric Lai, I specialize in AWS solutions 
+					and recently graduated with a Bachelors in Information Systems. 
+					I enjoy keeping up with the latest tech and enjoy developing new skills!</p>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Skills & Interests</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<p>I speak English and Chinese. I am a quick learner, adaptive, works as a team, and independent. 
+					I also enjoy developing new tech skills, and keeping up with the latest tech!</p>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+	
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Experience</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<h2>KSW TRADING CORP.</h2>
+					<h3>Web Development and IT Technician</h3>
+					<p class="subDetails">Brooklyn, NY</p>
+					<p><ul>As an IT technician and web developer, I helped design the organization's web page
+					User Interface including visual appearance, layout and usability. I've upgraded 
+					outdated web pages to modern standards and introduced a new intuitive and accessible
+					web interface.  Including: <br><br><li>Migrated web domain and assests to a new web hosting provider</li><li>Restored
+					critical web connectivity</li><li>Implemented up to date security standards</li><li>Enhanced
+					site searchability SEO</li><li>Maintained operation of critical web assets and E-Commerce
+					services</li><li>Resolved user technical issues</li></ul></p>
+				</article>
+				
+				<article>
+					<h2>GOUVERNEUR HOSPITAL</h2>
+					<h3>IT Apprentice</h3>
+					<p class="subDetails">Manhattan, NY</p>
+					<p><ul>As an IT Apprentice:<br><li>I assisted the head IT professional in technical issues</li><li>Briefed 
+								users on issues affecting their system</li><li>Proposed solutions to user issues</li><li>Ensured safe 
+								handling and delivery of critical hardware technology</li></ul></p>
+				</article>
+				
+				<article>
+					<h2>CHINESE PLANNING COUNCIL</h2>
+					<h3>Enrollment Officer</h3>
+					<p class="subDetails">Brooklyn, NY</p>
+					<p><ul>As an Enrollment Officer:<br><li>I enrolled in workplace staff</li>
+					<li>Processed personal data and credentials of new staff members</li>
+					<li>Provided workplace documentation and material</li>
+					<li>Identified & documented individuals.</li></ul></p>
+				</article>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Technical</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<ul class="keySkills">
+					<li>- AWS Certified Solutions Architect</li>
+					<li>- CompTIA Net+</li>
+					<li>- CompTIA Sec+</li>
+					<li>- Google IT Support Professional</li>
+					<li>- MS Azure AZ-900</li>
+					<li>- Python</li>
+					<li>- Linux</li>
+					
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Education</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<h2>CUNY School of Professional Studies</h2>
+					<p class="subDetails">Bachelor of Science, Information Systems — 3.8 GPA</p>
+					<p></p>
+				</article>
+				
+				<!-- <article>
+					<h2>#</h2>
+					<p class="subDetails">#</p>
+					<p>#</p>
+				</article> -->
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+	</div>
+</div>
+
+<!-- Visitor Counter Write-->
+<script type="text/javascript">
+window.onload = function() {
+    // Replace 'your_api_endpoint' with the actual API endpoint URL
+    const apiUrl = 'https://vzdwwpvz80.execute-api.us-east-1.amazonaws.com/dev';
+
+    // Define your API request parameters
+    const requestOptions = {
+        method: 'POST', // Adjust the HTTP method as needed
+    };
+
+    // Make the API request using fetch
+    fetch(apiUrl, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+            // Handle the API response data
+            console.log('Count Updated Successfully!', data);
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('API Error:', error);
+        });
+};
+
+</script>
+
+<!-- Retrieve Visitor Count -->
+<script>
+function fetchVisitorCount() {
+    // Replace 'your_lambda_function_endpoint' with the actual Lambda function endpoint
+    const lambdaEndpoint = 'https://vhh364w2jn7lyc36bqjgtmstqq0pklbb.lambda-url.us-east-1.on.aws/';
+
+    // Function to update the count on the webpage
+    function updateCount(count) {
+        // Modify this function based on how you want to update your webpage
+        console.log('Visitor Count:', count);
+        // Example: Display count in an HTML element with id 'countDisplay'
+        document.getElementById('countDisplay').textContent = count;
+    }
+
+    // Make an API call to your Lambda function endpoint
+    fetch(lambdaEndpoint)
+        .then(response => response.json())
+        .then(data => {
+            // Assuming 'greatest_sort_key' is the property in the Lambda response representing the count
+            const count = data.greatest_sort_key || 0;
+
+            // Handle the count and update the webpage
+            updateCount(count);
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('API Error:', error);
+        });
+}
+
+// Delay execution by 3 seconds
+setTimeout(fetchVisitorCount, 3000); // 3000 milliseconds = 3 seconds
+</script>
+
+
+
+
+</body>
+</html>
