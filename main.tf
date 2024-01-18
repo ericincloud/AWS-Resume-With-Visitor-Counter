@@ -2,10 +2,6 @@ provider "aws" {
   region = "us-west-1"  # Change to your desired AWS region
 }
 
-provider "aws" {
-  region = "us-west-1"
-}
-
 resource "aws_s3_bucket" "StaticSite" {
   bucket = "ericincloud.com"
   acl    = "public-read"  # Access control list, adjust as needed
