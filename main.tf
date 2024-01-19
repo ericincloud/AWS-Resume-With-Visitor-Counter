@@ -23,7 +23,7 @@ locals {
 
 resource "aws_cloudfront_distribution" "ericincloudCloudFront" {
   origin {
-    domain_name              = "arn:aws:s3:::ericincloud.com"
+    domain_name              = "ericincloud.com"
     origin_access_control_id = "ericincloud.com"
     origin_id                = "ericincloud.com"
   }
@@ -38,8 +38,6 @@ resource "aws_cloudfront_distribution" "ericincloudCloudFront" {
     bucket          = "mylogs.s3.amazonaws.com"
     prefix          = "myprefix"
   }
-
-  aliases = ["mysite.example.com", "yoursite.example.com"]
 
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
@@ -105,18 +103,6 @@ resource "aws_cloudfront_distribution" "ericincloudCloudFront" {
     viewer_protocol_policy = "redirect-to-https"
   }
 
-  price_class = "PriceClass_200"
-
-  restrictions {
-    geo_restriction {
-      restriction_type = "whitelist"
-      locations        = ["US", "CA", "GB", "DE"]
-    }
-  }
-
-  tags = {
-    Environment = "production"
-  }
 
   viewer_certificate {
     cloudfront_default_certificate = true
