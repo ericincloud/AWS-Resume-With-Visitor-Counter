@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_s3_bucket" "StaticSite" {
   bucket = "ericincloud.com"
 }
-
+ 
 resource "aws_s3_bucket_public_access_block" "StaticSite" {
   bucket = "ericincloud.com"
 
