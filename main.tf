@@ -24,7 +24,7 @@ locals {
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name              = ericincloud.com.s3-website.us-west-1.amazonaws.com
+    domain_name              = "ericincloud.com.s3-website.us-west-1.amazonaws.com"
     origin_access_control_id = "ericincloud.com"
     origin_id                = "ericincloud.com"
   }
