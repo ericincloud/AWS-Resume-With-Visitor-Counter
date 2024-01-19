@@ -17,20 +17,21 @@ resource "aws_s3_bucket_public_access_block" "StaticSite" {
 
 
 # CloudFront
+
 locals {
   s3_origin_id = "ericincloud.com"
 }
 
-resource "aws_cloudfront_distribution" "ericincloudCloudFront" {
+resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name              = "ericincloud.com.s3-website.us-west-1.amazonaws.com"
+    domain_name              = ericincloud.com.s3-website.us-west-1.amazonaws.com
     origin_access_control_id = "ericincloud.com"
     origin_id                = "ericincloud.com"
   }
-}
+
   enabled             = true
   is_ipv6_enabled     = true
-  comment             = "Static Site"
+  comment             = "Some comment"
   default_root_object = "index.html"
 
   logging_config {
@@ -38,6 +39,8 @@ resource "aws_cloudfront_distribution" "ericincloudCloudFront" {
     bucket          = "mylogs.s3.amazonaws.com"
     prefix          = "myprefix"
   }
+
+  
 
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
@@ -103,12 +106,23 @@ resource "aws_cloudfront_distribution" "ericincloudCloudFront" {
     viewer_protocol_policy = "redirect-to-https"
   }
 
+  price_class = "PriceClass_200"
+
+  restrictions {
+    geo_restriction {
+      restriction_type = "whitelist"
+      locations        = ["US", "CA", "GB", "DE"]
+    }
+  }
+
+  tags = {
+    Environment = "production"
+  }
 
   viewer_certificate {
     cloudfront_default_certificate = true
   }
 }
-
 
 # DynamoDB Table
 resource "aws_dynamodb_table" "visitor_table" {
