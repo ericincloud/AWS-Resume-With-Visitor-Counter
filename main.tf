@@ -14,18 +14,6 @@ resource "aws_s3_bucket_public_access_block" "StaticSite" {
   ignore_public_acls      = false
   restrict_public_buckets = false
 }
- 
-  versioning {
-    enabled = false
-  }
- 
-  lifecycle {
-    prevent_destroy = false  # Set to true to prevent accidental deletion
-  }
-
-  # Add other configurations as needed
-}
-
 
 # DynamoDB Table
 resource "aws_dynamodb_table" "visitor_table" {
