@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "StaticSite" {
 }
 
 resource "aws_s3_bucket_public_access_block" "StaticSite" {
-  bucket = aws_s3_bucket.ericincloud.com.id
+  bucket = ericincloud.com
 
   block_public_acls       = false
   block_public_policy     = false
