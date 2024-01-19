@@ -25,6 +25,7 @@ locals {
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name              = "ericincloud.com.s3.us-west-1.amazonaws.com"
+    origin_id                = "ericincloud.com"
   }
 
   enabled             = true
