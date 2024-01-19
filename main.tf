@@ -23,7 +23,7 @@ locals {
 
 resource "aws_cloudfront_distribution" "ericincloudCloudFront" {
   origin {
-    domain_name              = "ericincloud.com"
+    domain_name              =  ericincloud.com
     origin_access_control_id = "ericincloud.com"
     origin_id                = "ericincloud.com"
   }
