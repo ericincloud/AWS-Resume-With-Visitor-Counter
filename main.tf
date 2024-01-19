@@ -4,7 +4,15 @@ provider "aws" {
 
 resource "aws_s3_bucket" "StaticSite" {
   bucket = "ericincloud.com"
-  acl    = "public-read"  # Access control list, adjust as needed
+}
+
+resource "aws_s3_bucket_public_access_block" "StaticSite" {
+  bucket = aws_s3_bucket.ericincloud.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
  
   versioning {
     enabled = false
