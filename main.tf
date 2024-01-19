@@ -6,7 +6,6 @@ resource "aws_s3_bucket" "StaticSite" {
   bucket = "ericincloud.com"
   acl    = "public-read"  # Access control list, adjust as needed
  
-
   versioning {
     enabled = false
   }
@@ -100,3 +99,4 @@ resource "aws_iam_role_policy" "lambda_dynamodb_access" {
 }
 EOF
 }
+
