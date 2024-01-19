@@ -4,19 +4,8 @@ provider "aws" {
 
 resource "aws_s3_bucket" "StaticSite" {
   bucket = "ericincloud.com"
-  acl    = "private"  # Access control list, adjust as needed
+  acl    = "public-read"  # Access control list, adjust as needed
  
-
-# List of files to upload
-variable "files_to_upload" {
-  default = [
-    "index.html",
-    "AvatarMaker.png",
-    "style.css",
-    # Add more files as needed
-  ]
-}
-
 
   versioning {
     enabled = false
