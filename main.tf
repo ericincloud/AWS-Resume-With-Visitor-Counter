@@ -21,7 +21,7 @@ locals {
   s3_origin_id = "ericincloud.com"
 }
 
-resource "aws_cloudfront_distribution" "ericincloud.com" {
+resource "aws_cloudfront_distribution" "ericincloud" {
   origin {
     domain_name              = "ericincloud.com"
     origin_access_control_id = "ericincloud.com"
