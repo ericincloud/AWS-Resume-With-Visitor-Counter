@@ -175,7 +175,6 @@ EOF
 
 
 resource "aws_iam_role_policy_attachment" "lambda_exec_attachment" {
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
   policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"  # Full access to DynamoDB policy
   role       = aws_iam_role.lambda_exec.name
 }
