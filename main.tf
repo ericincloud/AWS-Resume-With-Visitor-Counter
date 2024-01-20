@@ -152,7 +152,6 @@ resource "aws_lambda_function" "retrieve_visitor_count" {
 
   source_code_hash = filebase64("RetrieveVisitorCountLambda.zip")
 
-  depends_on = [aws_lambda_function.visitor_counter]
 }
 
 # IAM Role for Lambda Execution
