@@ -138,7 +138,7 @@ resource "aws_lambda_function" "visitor_counter" {
   runtime       = "python3.12"
   handler       = "lambda_function.lambda_handler"
   role          = aws_iam_role.lambda_exec.arn
-  filename      = "VisitorCountLambda.py"  # Specify the path to your Lambda code
+  filename      = "VisitorCountLambda.zip"  # Specify the path to your Lambda code
 
   source_code_hash = filebase64("VisitorCountLambda.zip")
 }
@@ -148,7 +148,7 @@ resource "aws_lambda_function" "retrieve_visitor_count" {
   runtime       = "python3.12"
   handler       = "lambda_function.lambda_handler"
   role          = aws_iam_role.lambda_exec.arn
-  filename      = "RetrieveVisitorCountLambda.py"  # Specify the path to your Lambda code
+  filename      = "RetrieveVisitorCountLambda.zip"  # Specify the path to your Lambda code
 
   source_code_hash = filebase64("RetrieveVisitorCountLambda.zip")
 }
