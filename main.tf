@@ -15,7 +15,7 @@ resource "aws_s3_bucket_public_access_block" "StaticSite" {
   restrict_public_buckets = false
 }
 
- 
+  
 # CloudFront
 
 locals {
