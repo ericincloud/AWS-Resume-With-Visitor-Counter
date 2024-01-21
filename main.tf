@@ -118,7 +118,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
 # DynamoDB Table
 resource "aws_dynamodb_table" "visitor_table" {
-  name           = "VisitorTable"
+  name           = "Visitor_Count"
   billing_mode   = "PAY_PER_REQUEST"
   hash_key       = "Visitors"
   range_key      = "TotalVisitors"
