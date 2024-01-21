@@ -120,10 +120,10 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 resource "aws_dynamodb_table" "visitor_table" {
   name           = "Visitor_Count"
   billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "Visitors"
+  hash_key       = "Visitor"
   range_key      = "TotalVisitors"
   attribute {
-    name = "Visitors"
+    name = "Visitor"
     type = "S"
   }
   attribute {
@@ -136,7 +136,6 @@ resource "aws_dynamodb_table" "visitor_table" {
 resource "aws_lambda_function" "visitor_counter" {
   function_name = "VisitorCounter"
   runtime       = "python3.12"
-  handler       = "lambda_function.lambda_handler"
   role          = aws_iam_role.lambda_exec.arn
   filename      = "VisitorCountLambda.zip"  # Specify the path to your Lambda code
 
@@ -146,7 +145,6 @@ resource "aws_lambda_function" "visitor_counter" {
 resource "aws_lambda_function" "retrieve_visitor_count" {
   function_name = "RetrieveVisitorCount"
   runtime       = "python3.12"
-  handler       = "lambda_function.lambda_handler"
   role          = aws_iam_role.lambda_exec.arn
   filename      = "RetrieveVisitorCountLambda.zip"  # Specify the path to your Lambda code
 
