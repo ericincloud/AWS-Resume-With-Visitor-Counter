@@ -1,7 +1,7 @@
 provider "aws" {
   region = "us-west-1"  # Change to your desired AWS region
 }
-
+ 
 resource "aws_s3_bucket" "StaticSite" {
   bucket = "ericincloud.com"
 }
