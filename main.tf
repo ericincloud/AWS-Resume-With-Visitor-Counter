@@ -147,7 +147,7 @@ resource "aws_lambda_function" "retrieve_visitor_count" {
   runtime       = "python3.12"
   role          = aws_iam_role.lambda_exec.arn
   filename      = "RetrieveVisitorCountLambda.zip"  # Specify the path to your Lambda code
-
+  handler       = "lambda_function.lambda_handler"
   source_code_hash = filebase64("RetrieveVisitorCountLambda.zip")
 
 }
@@ -155,7 +155,7 @@ resource "aws_lambda_function" "retrieve_visitor_count" {
 # IAM Role for Lambda Execution
 resource "aws_iam_role" "lambda_exec" {
   name = "lambda_exec_role"
-
+  handler       = "lambda_function.lambda_handler"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
