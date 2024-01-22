@@ -136,7 +136,7 @@ resource "aws_dynamodb_table" "visitor_table" {
 resource "aws_lambda_function" "visitor_counter" {
   function_name = "VisitorCounter"
   runtime       = "python3.12"
-  handler       = "lambda_function.lambda_handler"
+  handler       = "VisitorCountLambda.lambda_handler"
   role          = aws_iam_role.lambda_exec.arn
   filename      = "VisitorCountLambda.zip"  # Specify the path to your Lambda code
 
@@ -146,7 +146,7 @@ resource "aws_lambda_function" "visitor_counter" {
 resource "aws_lambda_function" "retrieve_visitor_count" {
   function_name = "RetrieveVisitorCount"
   runtime       = "python3.12"
-  handler       = "lambda_function.lambda_handler"
+  handler       = "RetrieveVisitorCountLambda.lambda_handler"
   role          = aws_iam_role.lambda_exec.arn
   filename      = "RetrieveVisitorCountLambda.zip"  # Specify the path to your Lambda code
   source_code_hash = filebase64("RetrieveVisitorCountLambda.zip")
