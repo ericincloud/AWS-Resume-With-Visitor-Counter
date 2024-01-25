@@ -16,7 +16,7 @@
 #### Step  2 
 #### Moving over to API Gateway, we can now create an API to connect to the Lambda function. Create a REST API then create a POST method. Select the Lambda function named “VisitorCounter” and the region us-west-1. To deploy, click on deploy to create a new stage. After deploying, you should be able to see a URL. Copy the URL and place it in the “Visitor Counter Write” script within the index.html file.
 
-___
+<br>
 
 #### Step 3
 #### Next, head to Lambda and select the “RetrieveVisitorCount” function. Click on the “Configuration” tab > “Function URL” > “Create function URL”. Auth type: “NONE” > Additional settings > enable “Configure cross-origin resource sharing (CORS)” > Save. Copy the newly created Lambda function URL and paste it in the “Retrieve Visitor Count” script within the index.html file.
