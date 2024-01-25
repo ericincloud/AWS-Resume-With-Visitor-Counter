@@ -11,6 +11,8 @@
 #### Step 1
 #### Deploy infrastructure with Terraform. The following should be created/deployed: S3 bucket with the name “ericincloud.com”, a DynamoDB table named “Visitor_Count” with Partition Key “Visitor” and Sort Key “TotalVisitors”, Lambda Functions “visitor_counter” and “retrieve_visitor_count” both with the IAM role “lambda_exec_role” granting full access to DynamoDB, and a CloudFront distribution.
 
+<br>
+
 #### Step  2 
 #### Moving over to API Gateway, we can now create an API to connect to the Lambda function. Create a REST API then create a POST method. Select the Lambda function named “VisitorCounter” and the region us-west-1. To deploy, click on deploy to create a new stage. After deploying, you should be able to see a URL. Copy the URL and place it in the “Visitor Counter Write” script within the index.html file.
 
