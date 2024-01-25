@@ -31,7 +31,9 @@ ___
 #### Step 6: Copy the “Distribution domain name” under the general tab. Then head over to Route 53. Click on the hosted zone for “ericincloud.com” and edit the A record. Select route traffic to “Alias to CloudFront distribution” and paste in the CloudFront distribution domain name. This will direct traffic to CloudFront then to the S3 bucket instead of traffic going directly to the bucket itself.
 ___
 
-#### Step 7: And done! By now, you should be able to publicly access the website. If not, make sure the above steps are properly configured or visit the troubleshooting section at the bottom. The result is a static resume website secured with SSL/TLS with enhanced performance through CloudFront and a visitor counter that uses a REST API/Lambda URL integrated with Lambda functions to update the visitor count via a DynamoDB table!
+#### Step 7: And done! By now, you should be able to publicly access the website. If not, make sure the above steps are properly configured or visit the troubleshooting section at the bottom.
+
+The result is a static resume website secured with SSL/TLS with enhanced performance through CloudFront and a visitor counter that uses a REST API/Lambda URL integrated with Lambda functions to update the visitor count via a DynamoDB table!
 
 
 ## Troubleshooting
