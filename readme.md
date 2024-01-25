@@ -8,9 +8,7 @@
 
 ## Setup
 
-#### Step 1: Deploy infrastructure with Terraform
-
-#### The following should be created/deployed: S3 bucket with the name “ericincloud.com”, a DynamoDB table named “Visitor_Count” with Partition Key “Visitor” and Sort Key “TotalVisitors”, Lambda Functions “visitor_counter” and “retrieve_visitor_count” both with the IAM role “lambda_exec_role” granting full access to DynamoDB, and a CloudFront distribution.
+#### Step 1: Deploy infrastructure with Terraform. The following should be created/deployed: S3 bucket with the name “ericincloud.com”, a DynamoDB table named “Visitor_Count” with Partition Key “Visitor” and Sort Key “TotalVisitors”, Lambda Functions “visitor_counter” and “retrieve_visitor_count” both with the IAM role “lambda_exec_role” granting full access to DynamoDB, and a CloudFront distribution.
 
 ___
 
