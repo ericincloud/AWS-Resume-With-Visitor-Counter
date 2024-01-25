@@ -4,7 +4,7 @@
 
 #### This project aims to demonstrate a diverse 3 Tier Cloud Architecture utilizing AWS services. These services include S3 to host a static website, a DynamoDB table to write to and retrieve data from, API Gateway with Lambda functions to provide logic, and Route 53/CloudFront to improve performance — all packaged with Terraform and integrated with GitHub Actions to provide CI/CD capabilities. All services will be deployed in AWS Region “us-west-1”. 
 
-##### *To improve results, please replace“ericincloud.com” to whatever domain you own”
+##### NOTE: To improve results, please replace“ericincloud.com” to whatever domain you own”
 
 ## Setup
 
