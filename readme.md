@@ -8,31 +8,31 @@
 
 ## Setup
 
-#### Step 1
+### Step 1
 #### Deploy infrastructure with Terraform. The following should be created/deployed: S3 bucket with the name “ericincloud.com”, a DynamoDB table named “Visitor_Count” with Partition Key “Visitor” and Sort Key “TotalVisitors”, Lambda Functions “visitor_counter” and “retrieve_visitor_count” both with the IAM role “lambda_exec_role” granting full access to DynamoDB, and a CloudFront distribution.
 
 
-#### Step  2 
+### Step  2 
 #### Moving over to API Gateway, we can now create an API to connect to the Lambda function. Create a REST API then create a POST method. Select the Lambda function named “VisitorCounter” and the region us-west-1. To deploy, click on deploy to create a new stage. After deploying, you should be able to see a URL. Copy the URL and place it in the “Visitor Counter Write” script within the index.html file.
 
 
-#### Step 3
+### Step 3
 #### Next, head to Lambda and select the “RetrieveVisitorCount” function. Click on the “Configuration” tab > “Function URL” > “Create function URL”. Auth type: “NONE” > Additional settings > enable “Configure cross-origin resource sharing (CORS)” > Save. Copy the newly created Lambda function URL and paste it in the “Retrieve Visitor Count” script within the index.html file.
 
 
-#### Step 4
+### Step 4
 #### Upload files “index.html”, “style.css”, and “avatarmaker.png” to the “ericincloud.com” S3 Bucket. Enable Static Site Hosting in the properties settings of the S3 Bucket. Set index.html as the default page of the site. 
 
 
-#### Step 5
+### Step 5
 #### Now head to CloudFront and edit settings. Under “Alternate domain name (CNAME)” enter “ericincloud.com”. For “Custom SSL certificate”, select an already created SSL certificate or click on “Request certificate” to quickly create a new one. Create records in Route 53 if needed.
 
  
-#### Step 6
+### Step 6
 #### Copy the “Distribution domain name” under the general tab. Then head over to Route 53. Click on the hosted zone for “ericincloud.com” and edit the A record. Select route traffic to “Alias to CloudFront distribution” and paste in the CloudFront distribution domain name. This will direct traffic to CloudFront then to the S3 bucket instead of traffic going directly to the bucket itself.
 
 
-#### Step 7
+### Step 7
 #### And done! By now, you should be able to publicly access the website. If not, make sure the above steps are properly configured or visit the troubleshooting section at the bottom.
 
 #### The result is a static resume website secured with SSL/TLS with enhanced performance through CloudFront and a visitor counter that uses a REST API/Lambda URL integrated with Lambda functions to update the visitor count via a DynamoDB table!
