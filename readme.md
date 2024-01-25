@@ -22,23 +22,22 @@ ___
 
 ___
 
-#### Step 5: Upload files “index.html”, “style.css”, and “avatarmaker.png” to the “ericincloud.com” S3 Bucket. Enable Static Site Hosting in the properties settings of the S3 Bucket. Set index.html as the default page of the site. 
+#### Step 4: Upload files “index.html”, “style.css”, and “avatarmaker.png” to the “ericincloud.com” S3 Bucket. Enable Static Site Hosting in the properties settings of the S3 Bucket. Set index.html as the default page of the site. 
 
 ___
 
-#### Step 6: Now head to CloudFront and edit settings. Under “Alternate domain name (CNAME)” enter “ericincloud.com”. For “Custom SSL certificate”, select an already created SSL certificate or click on “Request certificate” to quickly create a new one. Create records in Route 53 if needed.
+#### Step 5: Now head to CloudFront and edit settings. Under “Alternate domain name (CNAME)” enter “ericincloud.com”. For “Custom SSL certificate”, select an already created SSL certificate or click on “Request certificate” to quickly create a new one. Create records in Route 53 if needed.
 
 ___
  
-#### Step 7: Copy the “Distribution domain name” under the general tab. Then head over to Route 53. Click on the hosted zone for “ericincloud.com” and edit the A record. Select route traffic to “Alias to CloudFront distribution” and paste in the CloudFront distribution domain name. This will direct traffic to CloudFront then to the S3 bucket instead of traffic going directly to the bucket itself.
+#### Step 6: Copy the “Distribution domain name” under the general tab. Then head over to Route 53. Click on the hosted zone for “ericincloud.com” and edit the A record. Select route traffic to “Alias to CloudFront distribution” and paste in the CloudFront distribution domain name. This will direct traffic to CloudFront then to the S3 bucket instead of traffic going directly to the bucket itself.
 
 #### By now, you should be able to publicly access the website. If not, make sure the above steps are properly configured or visit the troubleshooting section at the bottom.  
 
 ___
 
-#### Step 8: And done! The result is a static resume website secured with SSL/TLS with enhanced performance through CloudFront and a visitor counter that uses a REST API/Lambda URL integrated with Lambda functions to update the visitor count via a DynamoDB table!
+#### Step 7: And done! The result is a static resume website secured with SSL/TLS with enhanced performance through CloudFront and a visitor counter that uses a REST API/Lambda URL integrated with Lambda functions to update the visitor count via a DynamoDB table!
 
-___
 
 ## Troubleshooting
 
