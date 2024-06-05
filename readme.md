@@ -1,8 +1,8 @@
- # Welcome to my AWS Resume With Visitor Counter!
+ # AWS-Resume-With-Visitor-Counter
 
 ## Overview
 
-#### This project aims to demonstrate a diverse 3-Tier Cloud Architecture utilizing AWS services. The result is a static resume site with a visitor counter powered by AWS services. These services include S3 to host a static website, a DynamoDB table to write to and retrieve data from, API Gateway with Lambda functions to provide logic, and Route 53/CloudFront to improve performance — all packaged with Terraform and integrated with GitHub Actions to provide CI/CD capabilities. All services will be deployed in AWS Region “US-WEST-1”. 
+#### AWS-Resume-With-Visitor-Counter is a sophisticated 3-tier cloud architecture leveraging AWS services to deliver a static resume website with a visitor counter. This solution employs S3 for static website hosting, DynamoDB for data storage and retrieval, and API Gateway with Lambda functions for backend logic. Performance is optimized through Route 53 and CloudFront, while Terraform and GitHub Actions enable continuous integration and deployment (CI/CD). All services are deployed in the AWS US-WEST-1 region.
 
 ### NOTE: *Terraform file (main.tf) in repository.*
 
@@ -34,10 +34,10 @@
 
 ![AWSresumeR53](https://github.com/ericincloud/AWS-Resume-With-Visitor-Counter/assets/144301872/03298837-171d-4b0e-bf6d-5baed98cdee2)
 
-## Step 7: Finish!
+## Step 7: Finish
 #### And done! By now, you should be able to publicly access the website. If not, make sure the above steps are properly configured or visit the troubleshooting section at the bottom.
 
-#### The result is a static resume website secured with SSL/TLS with enhanced performance through CloudFront and a visitor counter that uses a REST API/Lambda URL integrated with Lambda functions to update the visitor count via a DynamoDB table!
+#### The result is a static resume website secured with SSL/TLS with enhanced performance through CloudFront and a visitor counter that uses a REST API/Lambda URL integrated with Lambda functions to update the visitor count via a DynamoDB table.
 
 ![AWSResumeSite](https://github.com/ericincloud/AWS-Resume-With-Visitor-Counter/assets/144301872/4837aa15-869e-44dd-9079-2c47203a0b43)
 
