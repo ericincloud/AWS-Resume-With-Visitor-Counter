@@ -2,14 +2,14 @@
 
 ## Overview
 
-#### AWS-Resume-With-Visitor-Counter is a sophisticated 3-tier cloud architecture leveraging AWS services to deliver a static resume website with a visitor counter. This solution employs S3 for static website hosting, DynamoDB for data storage and retrieval, and API Gateway with Lambda functions for backend logic. Performance is optimized through Route 53 and CloudFront, while Terraform and GitHub Actions enable continuous integration and deployment (CI/CD). All services are deployed in the AWS US-WEST-1 region.
+#### AWS-Resume-With-Visitor-Counter is an advanced 3-tier cloud architecture that utilizes AWS services to create a static resume website with an integrated visitor counter. The architecture incorporates S3 for static website hosting, DynamoDB for data storage and retrieval, and API Gateway alongside Lambda functions for backend logic. Performance is enhanced through Route 53 and CloudFront, while Terraform and GitHub Actions facilitate continuous integration and deployment (CI/CD). All services are deployed in the AWS US-West-1 region.
 
 ![image](https://github.com/ericincloud/AWS-Resume-With-Visitor-Counter/assets/144301872/622047e4-36de-4fd3-8d94-6e6b81b57be2)
 
 ### NOTE: *Terraform file (main.tf) in repository.*
 
-## Step 1: Terraform
-#### Deploy infrastructure with Terraform. The following should be created/deployed: S3 bucket with the name “ericincloud.com”, a DynamoDB table named “Visitor_Count” with Partition Key “Visitor” and Sort Key “TotalVisitors”, Lambda Functions “visitor_counter” and “retrieve_visitor_count” both with the IAM role “lambda_exec_role” granting full access to DynamoDB, and a CloudFront distribution.
+## Step 1: Terraform 
+#### Deploy infrastructure with Terraform. The following should be created/deployed: S3 bucket with the name “ericincloud.com” (for me), a DynamoDB table named “Visitor_Count” with Partition Key “Visitor” and Sort Key “TotalVisitors”, Lambda Functions “visitor_counter” and “retrieve_visitor_count” both with the IAM role “lambda_exec_role” granting full access to DynamoDB, and a CloudFront distribution.
 
 ![AWSresumetf](https://github.com/ericincloud/AWS-Resume-With-Visitor-Counter/assets/144301872/aad08ed9-feb6-47f8-9c8a-0cc6a32e1700)
 
@@ -45,7 +45,7 @@
 
 ## Troubleshooting
 
-#### Website not showing up?  —  Try these solutions!
+#### Website not showing up? 
 
 #### 1. Invalidate CloudFront distribution by creating an invalidation within the CloudFront distribution “Invalidation” tab. Enter “/*” under Object paths and create invalidation. This removes cached content from the CDN so that new content can be delivered to users.
 
